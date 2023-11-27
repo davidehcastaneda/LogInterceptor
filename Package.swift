@@ -17,6 +17,7 @@ let package = Package(
     ],
     dependencies: [
         // Add your package dependencies here
+        .package(url: "https://github.com/davidehcastaneda/NetworkRequest", branch: "main"),
         .package(url: "https://github.com/davidehcastaneda/NetworkClient", branch: "main")
     ],
     targets: [
@@ -24,7 +25,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "LogInterceptor",
-            dependencies: ["NetworkClient"]),
+            dependencies: ["NetworkClient", "NetworkRequest"]),
         .testTarget(
             name: "LogInterceptorTests",
             dependencies: ["LogInterceptor"]),
